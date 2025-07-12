@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReWear - Item Listings</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .main-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      background-color: #f8f9fa;
+    }
+    .thumbnail {
+      width: 100%;
+      height: 120px;
+      object-fit: contain;
+      background-color: #f1f1f1;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+    .thumbnail:hover {
+      border-color: #007bff;
+    }
+    .description-box {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .product-block {
+      margin-bottom: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">ReWear</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Browse</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="register.html">Sign Up</a></li>
+      </ul>
+    </div>
+    <form class="d-flex ms-lg-3 mt-2 mt-lg-0" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search items..." aria-label="Search" />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<!-- Product Listings -->
+<div class="container mt-5">
+
+  <!-- Product 1 -->
+  <div class="row product-block">
+    <div class="col-md-6">
+      <img src="images/denim-jacket.png" id="mainImage1" class="main-image mb-3" alt="Product 1">
+      <div class="row g-2">
+        <div class="col-3"><img src="images/denim-jacket.png" class="thumbnail" onclick="document.getElementById('mainImage1').src=this.src;"></div>
+        <div class="col-3"><img src="images/denim-jacket-side.png" class="thumbnail" onclick="document.getElementById('mainImage1').src=this.src;"></div>
+        <div class="col-3"><img src="images/denim-jacket-back.png" class="thumbnail" onclick="document.getElementById('mainImage1').src=this.src;"></div>
+        <div class="col-3"><img src="images/denim-jacket-closeup.png" class="thumbnail" onclick="document.getElementById('mainImage1').src=this.src;"></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3>Vintage Denim Jacket</h3>
+      <p class="text-muted">Brand: Levi’s | Size: L | Condition: Gently Used</p>
+      <div class="description-box">
+        <p>Classic, rugged style that never goes out of fashion. Made with premium cotton and soft lining for comfort.</p>
+        <ul>
+          <li>Material: 100% Cotton</li>
+          <li>Color: Blue</li>
+          <li>Care: Machine Wash</li>
+          <li>Availability: In Stock</li>
+        </ul>
+        <button class="btn btn-success">Swap Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="row product-block">
+    <div class="col-md-6">
+      <img src="images/floral-dress.png" id="mainImage2" class="main-image mb-3" alt="Product 2">
+      <div class="row g-2">
+        <div class="col-3"><img src="images/floral-dress.png" class="thumbnail" onclick="document.getElementById('mainImage2').src=this.src;"></div>
+        <div class="col-3"><img src="images/floral-dress-side.png" class="thumbnail" onclick="document.getElementById('mainImage2').src=this.src;"></div>
+        <div class="col-3"><img src="images/floral-dress-back.png" class="thumbnail" onclick="document.getElementById('mainImage2').src=this.src;"></div>
+        <div class="col-3"><img src="images/floral-dress-closeup.png" class="thumbnail" onclick="document.getElementById('mainImage2').src=this.src;"></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3>Floral Summer Dress</h3>
+      <p class="text-muted">Brand: Zara | Size: M | Condition: New</p>
+      <div class="description-box">
+        <p>A light and breezy dress perfect for summer outings. Features floral patterns and a flattering fit.</p>
+        <ul>
+          <li>Material: Cotton Blend</li>
+          <li>Color: Floral Print</li>
+          <li>Care: Hand Wash</li>
+          <li>Availability: 2 Pieces Left</li>
+        </ul>
+        <button class="btn btn-success">Swap Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product 3 -->
+  <div class="row product-block">
+    <div class="col-md-6">
+      <img src="images/white-sneakers.png" id="mainImage3" class="main-image mb-3" alt="Product 3">
+      <div class="row g-2">
+        <div class="col-3"><img src="images/white-sneakers.png" class="thumbnail" onclick="document.getElementById('mainImage3').src=this.src;"></div>
+        <div class="col-3"><img src="images/white-sneakers-side.png" class="thumbnail" onclick="document.getElementById('mainImage3').src=this.src;"></div>
+        <div class="col-3"><img src="images/white-sneakers-sole.png" class="thumbnail" onclick="document.getElementById('mainImage3').src=this.src;"></div>
+        <div class="col-3"><img src="images/white-sneakers-top.png" class="thumbnail" onclick="document.getElementById('mainImage3').src=this.src;"></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3>Classic White Sneakers</h3>
+      <p class="text-muted">Brand: Nike | Size: 9 | Condition: Like New</p>
+      <div class="description-box">
+        <p>Clean white sneakers that pair well with anything. Minimalist style and comfortable for all-day wear.</p>
+        <ul>
+          <li>Material: Leather</li>
+          <li>Color: White</li>
+          <li>Care: Wipe with damp cloth</li>
+          <li>Availability: 1 Pair</li>
+        </ul>
+        <button class="btn btn-success">Swap Now</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="bg-light text-center py-4 mt-5">
+  <div class="container">
+    <p class="mb-0">© 2025 ReWear. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

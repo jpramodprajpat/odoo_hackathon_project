@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ReWear - Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .hero {
+      background: #e9ecef;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .category-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .category-box:hover {
+      background: #f1f1f1;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      cursor: pointer;
+    }
+
+   .featured-img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+
+    footer {
+      background: #fff;
+      padding: 20px 0;
+      text-align: center;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">ReWear</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Browse</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="register.html">Sign Up</a></li>
+      </ul>
+    </div>
+    <form class="d-flex ms-lg-3 mt-2 mt-lg-0" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search items..." aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1 class="mb-4">Swap Your Style, Not the Planet 🌿</h1>
+    <div class="mb-4">
+      <a href="#" class="btn btn-success me-2">Start Swapping</a>
+      <a href="#" class="btn btn-outline-secondary">Browse Items</a>
+    </div>
+  </div>
+</section>
+
+<!-- Carousel of Featured Clothing -->
+<div id="carouselExample" class="carousel slide mb-5" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://via.placeholder.com/1200x400?text=Featured+Item+1" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://via.placeholder.com/1200x400?text=Featured+Item+2" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://via.placeholder.com/1200x400?text=Featured+Item+3" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- Categories Section -->
+<section class="container mb-5">
+  <h2 class="mb-4 text-center">Categories</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="category-box">Tops</div>
+    </div>
+    <div class="col-md-4">
+      <div class="category-box">Jeans</div>
+    </div>
+    <div class="col-md-4">
+      <div class="category-box">Jackets</div>
+    </div>
+    <div class="col-md-4">
+      <div class="category-box">Shoes</div>
+    </div>
+    <div class="col-md-4">
+      <div class="category-box">Accessories</div>
+    </div>
+    <div class="col-md-4">
+      <div class="category-box">More</div>
+    </div>
+  </div>
+</section>
+
+<!-- Optional: Testimonials or Impact Section -->
+<section class="bg-light py-5">
+  <div class="container">
+    <h3 class="text-center mb-4">Why ReWear?</h3>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <h5>10,000+</h5>
+        <p>Items Swapped</p>
+      </div>
+      <div class="col-md-4">
+        <h5>5,000+</h5>
+        <p>Happy Swappers</p>
+      </div>
+      <div class="col-md-4">
+        <h5>∞</h5>
+        <p>Planet Saved</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Items Section -->
+<section class="container mb-5">
+  <h2 class="mb-4 text-center">Featured Items</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="../images/Dress.webp" class="featured-img" alt="Floral Summer Dress">
+        <div class="card-body">
+          <h5 class="card-title">Floral Summer Dress</h5>
+          <p class="card-text">Size: M | Brand: Zara</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="../images/Jacket.jpg" class="featured-img" alt="Vintage Denim Jacket">
+        <div class="card-body">
+          <h5 class="card-title">Vintage Denim Jacket</h5>
+          <p class="card-text">Size: L | Brand: Levi's</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="../images/Classic White Sneakers.webp" class="featured-img" alt="Classic White Sneakers">
+        <div class="card-body">
+          <h5 class="card-title">Classic White Sneakers</h5>
+          <p class="card-text">Size: 9 | Brand: Nike</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p class="mb-0">© 2025 ReWear. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
