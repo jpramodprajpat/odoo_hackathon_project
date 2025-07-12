@@ -54,42 +54,68 @@
       <p class="mt-3">Already have an account? <a href="login.html">Login</a></p>
     </form>
   </div>
+<script>
+  function previewRegisterImage(event) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      document.getElementById('regPreview').src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  }
 
-  <script>
-    function previewRegisterImage(event) {
-      const reader = new FileReader();
-      reader.onload = function () {
-        document.getElementById('regPreview').src = reader.result;
-      };
-      reader.readAsDataURL(event.target.files[0]);
+  async function validateRegister(event) {
+    event.preventDefault(); // Stop form submission
+
+    const fullName = document.getElementById("fullname").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const confirmPassword = document.getElementById("confirmPassword").value.trim();
+    const errorMsg = document.getElementById("error");
+
+    if (!fullName || !email || !password || !confirmPassword) {
+      errorMsg.style.color = "red";
+      errorMsg.textContent = "Please fill in all fields.";
+      return false;
     }
 
-    function validateRegister(event) {
-      event.preventDefault(); // Prevent form from submitting
-
-      const fullName = document.getElementById("fullname").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
-      const confirmPassword = document.getElementById("confirmPassword").value.trim();
-      const errorMsg = document.getElementById("error");
-
-      if (!fullName || !email || !password || !confirmPassword) {
-        errorMsg.style.color = "red";
-        errorMsg.textContent = "Please fill in all fields.";
-        return false;
-      }
-
-      if (password !== confirmPassword) {
-        errorMsg.style.color = "red";
-        errorMsg.textContent = "Passwords do not match.";
-        return false;
-      }
-
-      // ✅ All good - ready for backend
-      errorMsg.style.color = "green";
-      errorMsg.textContent = "Registration successful!";
-      return true;
+    if (password !== confirmPassword) {
+      errorMsg.style.color = "red";
+      errorMsg.textContent = "Passwords do not match.";
+      return false;
     }
-  </script>
+
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: fullName,
+          email: email,
+          password: password
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        errorMsg.style.color = "green";
+        errorMsg.textContent = "Registered successfully! Redirecting...";
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 1500);
+      } else {
+        errorMsg.style.color = "red";
+        errorMsg.textContent = data.msg || "Registration failed.";
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      errorMsg.style.color = "red";
+      errorMsg.textContent = "Something went wrong. Try again.";
+    }
+  }
+</script>
+
 </body>
 </html>
