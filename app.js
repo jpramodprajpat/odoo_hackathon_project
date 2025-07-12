@@ -16,7 +16,7 @@ app.use('/uploads', express.static('uploads'));
 // ✅ Serve frontend
 app.use(express.static(path.join(__dirname, 'register')));
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'register', 'index.html'));
+  res.sendFile(path.join(__dirname, 'register', 'login.html'));
 });
 
 // Routes

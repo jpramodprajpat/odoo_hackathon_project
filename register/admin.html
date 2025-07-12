@@ -54,8 +54,6 @@
   </div>
 
   <!-- Tab Contents -->
-
-  <!-- Listings -->
   <div id="listings" class="tab-content active">
     <h4 class="mt-4">Pending Listings</h4>
     <div id="pendingItemsContainer">
@@ -63,18 +61,15 @@
     </div>
   </div>
 
-  <!-- Users -->
   <div id="users" class="tab-content">
     <h4 class="mt-4">Manage Users</h4>
     <p>Coming soon...</p>
   </div>
 
-  <!-- Orders -->
   <div id="orders" class="tab-content">
     <h4 class="mt-4">Manage Swap Requests</h4>
     <p>Coming soon...</p>
   </div>
-
 </div>
 
 <script>
@@ -137,7 +132,7 @@
     if (!confirm("Approve this item?")) return;
     try {
       const res = await fetch(`http://localhost:5000/api/admin/approve/${id}`, {
-        method: "POST",
+        method: "PUT", // ✅ Fixed to PUT
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -147,6 +142,7 @@
       alert(data.msg || "Item approved!");
       loadPendingItems();
     } catch (err) {
+      console.error(err);
       alert("Error approving item.");
     }
   }
@@ -155,7 +151,7 @@
     if (!confirm("Reject this item?")) return;
     try {
       const res = await fetch(`http://localhost:5000/api/admin/reject/${id}`, {
-        method: "POST",
+        method: "PUT", // ✅ Fixed to PUT
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -165,11 +161,11 @@
       alert(data.msg || "Item rejected!");
       loadPendingItems();
     } catch (err) {
+      console.error(err);
       alert("Error rejecting item.");
     }
   }
 
-  // Load items when page loads
   loadPendingItems();
 </script>
 
